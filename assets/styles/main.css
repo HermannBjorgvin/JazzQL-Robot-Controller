@@ -1,0 +1,810 @@
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.0.1
+* Docs at http://davidtheclark.github.io/scut
+*/
+/*! 
+ * Marka - v0.3.1 
+ * http://fian.my.id/marka 
+ * 
+ * Copyright 2014 Alfiana E. Sibuea and other contributors 
+ * Released under the MIT license 
+ * https://github.com/fians/marka/blob/master/LICENSE 
+ */
+.marka {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-transition: all 500ms;
+  transition: all 500ms; }
+
+.marka i {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: #000;
+  -webkit-transition: all 500ms;
+  transition: all 500ms; }
+
+.marka.marka-set i {
+  opacity: 1; }
+
+.marka.marka-rotate-right {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.marka.marka-rotate-left {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.marka.marka-rotate-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.marka.marka-icon-empty {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0); }
+
+.marka.marka-icon-angle-double i {
+  -webkit-transform: rotate(45deg) scale(0.4, 0.1) translate(0%, -150%);
+  -ms-transform: rotate(45deg) scale(0.4, 0.1) translate(0%, -150%);
+  transform: rotate(45deg) scale(0.4, 0.1) translate(0%, -150%); }
+
+.marka.marka-icon-angle-double i:nth-child(2) {
+  -webkit-transform: rotate(135deg) scale(0.4, 0.1) translate(0%, 150%);
+  -ms-transform: rotate(135deg) scale(0.4, 0.1) translate(0%, 150%);
+  transform: rotate(135deg) scale(0.4, 0.1) translate(0%, 150%); }
+
+.marka.marka-icon-angle-double i:nth-child(3) {
+  -webkit-transform: rotate(45deg) scale(0.4, 0.1) translate(40%, 10%);
+  -ms-transform: rotate(45deg) scale(0.4, 0.1) translate(40%, 10%);
+  transform: rotate(45deg) scale(0.4, 0.1) translate(40%, 10%); }
+
+.marka.marka-icon-angle-double i:nth-child(4) {
+  -webkit-transform: rotate(135deg) scale(0.4, 0.1) translate(40%, -10%);
+  -ms-transform: rotate(135deg) scale(0.4, 0.1) translate(40%, -10%);
+  transform: rotate(135deg) scale(0.4, 0.1) translate(40%, -10%); }
+
+.marka.marka-icon-angle i {
+  -webkit-transform: rotate(45deg) scale(0.4, 0.1) translate(20%, -75%);
+  -ms-transform: rotate(45deg) scale(0.4, 0.1) translate(20%, -75%);
+  transform: rotate(45deg) scale(0.4, 0.1) translate(20%, -75%); }
+
+.marka.marka-icon-angle i:nth-child(2n) {
+  -webkit-transform: rotate(135deg) scale(0.4, 0.1) translate(20%, 75%);
+  -ms-transform: rotate(135deg) scale(0.4, 0.1) translate(20%, 75%);
+  transform: rotate(135deg) scale(0.4, 0.1) translate(20%, 75%); }
+
+.marka.marka-icon-arrow i {
+  -webkit-transform: rotate(45deg) scale(0.55, 0.2) translate(-0.5%, -90%);
+  -ms-transform: rotate(45deg) scale(0.55, 0.2) translate(-0.5%, -90%);
+  transform: rotate(45deg) scale(0.55, 0.2) translate(-0.5%, -90%); }
+
+.marka.marka-icon-arrow i:nth-child(2) {
+  -webkit-transform: rotate(135deg) scale(0.55, 0.2) translate(-0.5%, 90%);
+  -ms-transform: rotate(135deg) scale(0.55, 0.2) translate(-0.5%, 90%);
+  transform: rotate(135deg) scale(0.55, 0.2) translate(-0.5%, 90%); }
+
+.marka.marka-icon-arrow i:nth-child(3) {
+  -webkit-transform: rotate(90deg) scale(0.6, 0.2) translate(17%, 0);
+  -ms-transform: rotate(90deg) scale(0.6, 0.2) translate(17%, 0);
+  transform: rotate(90deg) scale(0.6, 0.2) translate(17%, 0); }
+
+.marka.marka-icon-asterisk i {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.2);
+  -ms-transform: rotate(90deg) scale(0.8, 0.2);
+  transform: rotate(90deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-asterisk i:nth-child(2) {
+  -webkit-transform: rotate(-30deg) scale(0.8, 0.2);
+  -ms-transform: rotate(-30deg) scale(0.8, 0.2);
+  transform: rotate(-30deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-asterisk i:nth-child(3) {
+  -webkit-transform: rotate(30deg) scale(0.8, 0.2);
+  -ms-transform: rotate(30deg) scale(0.8, 0.2);
+  transform: rotate(30deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-bars i {
+  -webkit-transform: scale(0.8, 0.2);
+  -ms-transform: scale(0.8, 0.2);
+  transform: scale(0.8, 0.2); }
+
+.marka.marka-icon-bars i:nth-child(2) {
+  -webkit-transform: scale(0.8, 0.2) translate(0%, -140%);
+  -ms-transform: scale(0.8, 0.2) translate(0%, -140%);
+  transform: scale(0.8, 0.2) translate(0%, -140%); }
+
+.marka.marka-icon-bars i:nth-child(3) {
+  -webkit-transform: scale(0.8, 0.2) translate(0%, 140%);
+  -ms-transform: scale(0.8, 0.2) translate(0%, 140%);
+  transform: scale(0.8, 0.2) translate(0%, 140%); }
+
+.marka.marka-icon-check i {
+  -webkit-transform: rotate(-45deg) scale(0.75, 0.2) translate(10%, 50%);
+  -ms-transform: rotate(-45deg) scale(0.75, 0.2) translate(10%, 50%);
+  transform: rotate(-45deg) scale(0.75, 0.2) translate(10%, 50%); }
+
+.marka.marka-icon-check i:nth-child(2) {
+  -webkit-transform: rotate(45deg) scale(0.5, 0.2) translate(-10%, 120%);
+  -ms-transform: rotate(45deg) scale(0.5, 0.2) translate(-10%, 120%);
+  transform: rotate(45deg) scale(0.5, 0.2) translate(-10%, 120%); }
+
+.marka.marka-icon-chevron i {
+  -webkit-transform: rotate(45deg) scale(0.6, 0.2) translate(16.5%, -50%);
+  -ms-transform: rotate(45deg) scale(0.6, 0.2) translate(16.5%, -50%);
+  transform: rotate(45deg) scale(0.6, 0.2) translate(16.5%, -50%); }
+
+.marka.marka-icon-chevron i:nth-child(2) {
+  -webkit-transform: rotate(135deg) scale(0.6, 0.2) translate(16.5%, 50%);
+  -ms-transform: rotate(135deg) scale(0.6, 0.2) translate(16.5%, 50%);
+  transform: rotate(135deg) scale(0.6, 0.2) translate(16.5%, 50%); }
+
+.marka.marka-icon-circle-minus i {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-minus i:last-child, .marka.marka-icon-circle-minus i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o-filled i {
+  border-radius: 50%;
+  -webkit-transform: rotate(0deg) scale(0.5);
+  -ms-transform: rotate(0deg) scale(0.5);
+  transform: rotate(0deg) scale(0.5); }
+
+.marka.marka-icon-circle-o-filled i:nth-child(1) {
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8); }
+
+.marka.marka-icon-circle-o-filled i:nth-child(2) {
+  -webkit-transform: rotate(0deg) scale(0.65);
+  -ms-transform: rotate(0deg) scale(0.65);
+  transform: rotate(0deg) scale(0.65); }
+
+.marka.marka-icon-circle-o-minus i {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o-minus i:nth-child(1) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-o-minus i:nth-child(2) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-circle-o-plus i {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o-plus i:nth-child(1) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-o-plus i:nth-child(2) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-circle-o-plus i:nth-child(3) {
+  border-radius: 0;
+  -webkit-transform: rotate(90deg) scale(0.5, 0.125);
+  -ms-transform: rotate(90deg) scale(0.5, 0.125);
+  transform: rotate(90deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o-times i {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(45deg) scale(0.5, 0.125);
+  transform: rotate(45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o-times i:nth-child(1) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-o-times i:nth-child(2) {
+  border-radius: 50%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-circle-o-times i:nth-child(3) {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125);
+  transform: rotate(-45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-o i {
+  border-radius: 50%;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0); }
+
+.marka.marka-icon-circle-o i:nth-child(1) {
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8); }
+
+.marka.marka-icon-circle-o i:nth-child(2) {
+  -webkit-transform: rotate(0deg) scale(0.65);
+  -ms-transform: rotate(0deg) scale(0.65);
+  transform: rotate(0deg) scale(0.65); }
+
+.marka.marka-icon-circle-plus i {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-plus i:last-child {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-plus i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(90deg) scale(0.5, 0.125);
+  -ms-transform: rotate(90deg) scale(0.5, 0.125);
+  transform: rotate(90deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-times i {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-circle-times i:last-child {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(45deg) scale(0.5, 0.125);
+  transform: rotate(45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle-times i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125);
+  transform: rotate(-45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-circle i {
+  border-radius: 50%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-minus i {
+  -webkit-transform: scale(0.8, 0.2);
+  -ms-transform: scale(0.8, 0.2);
+  transform: scale(0.8, 0.2); }
+
+.marka.marka-icon-pause i {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.35) translate(0%, 65%);
+  -ms-transform: rotate(90deg) scale(0.8, 0.35) translate(0%, 65%);
+  transform: rotate(90deg) scale(0.8, 0.35) translate(0%, 65%); }
+
+.marka.marka-icon-pause i:nth-child(2) {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.35) translate(0%, -65%);
+  -ms-transform: rotate(90deg) scale(0.8, 0.35) translate(0%, -65%);
+  transform: rotate(90deg) scale(0.8, 0.35) translate(0%, -65%); }
+
+.marka.marka-icon-plus i {
+  -webkit-transform: scale(0.8, 0.2);
+  -ms-transform: scale(0.8, 0.2);
+  transform: scale(0.8, 0.2); }
+
+.marka.marka-icon-plus i:nth-child(2) {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.2);
+  -ms-transform: rotate(90deg) scale(0.8, 0.2);
+  transform: rotate(90deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-signal-five i, .marka.marka-icon-signal-five-four i, .marka.marka-icon-signal-five-one i, .marka.marka-icon-signal-five-three i, .marka.marka-icon-signal-five-two i {
+  -webkit-transform: rotate(90deg) scale(0.16, 0.12) translate(200%, 280%);
+  -ms-transform: rotate(90deg) scale(0.16, 0.12) translate(200%, 280%);
+  transform: rotate(90deg) scale(0.16, 0.12) translate(200%, 280%); }
+
+.marka.marka-icon-signal-five i:nth-child(2), .marka.marka-icon-signal-five-four i:nth-child(2), .marka.marka-icon-signal-five-three i:nth-child(2), .marka.marka-icon-signal-five-two i:nth-child(2), .marka.marka-icon-signal-five-two i:nth-child(3), .marka.marka-icon-signal-five-two i:nth-child(4), .marka.marka-icon-signal-five-two i:nth-child(5) {
+  -webkit-transform: rotate(90deg) scale(0.32, 0.12) translate(75%, 140%);
+  -ms-transform: rotate(90deg) scale(0.32, 0.12) translate(75%, 140%);
+  transform: rotate(90deg) scale(0.32, 0.12) translate(75%, 140%); }
+
+.marka.marka-icon-signal-five i:nth-child(3), .marka.marka-icon-signal-five-four i:nth-child(3), .marka.marka-icon-signal-five-three i:nth-child(3), .marka.marka-icon-signal-five-three i:nth-child(4), .marka.marka-icon-signal-five-three i:nth-child(5) {
+  -webkit-transform: rotate(90deg) scale(0.48, 0.12) translate(34%, 0);
+  -ms-transform: rotate(90deg) scale(0.48, 0.12) translate(34%, 0);
+  transform: rotate(90deg) scale(0.48, 0.12) translate(34%, 0); }
+
+.marka.marka-icon-signal-five i:nth-child(4), .marka.marka-icon-signal-five-four i:nth-child(4), .marka.marka-icon-signal-five-four i:nth-child(5) {
+  -webkit-transform: rotate(90deg) scale(0.64, 0.12) translate(13%, -140%);
+  -ms-transform: rotate(90deg) scale(0.64, 0.12) translate(13%, -140%);
+  transform: rotate(90deg) scale(0.64, 0.12) translate(13%, -140%); }
+
+.marka.marka-icon-signal-five i:nth-child(5) {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.12) translate(0%, -280%);
+  -ms-transform: rotate(90deg) scale(0.8, 0.12) translate(0%, -280%);
+  transform: rotate(90deg) scale(0.8, 0.12) translate(0%, -280%); }
+
+.marka.marka-icon-signal-three i, .marka.marka-icon-signal-three-one i, .marka.marka-icon-signal-three-two i {
+  -webkit-transform: rotate(90deg) scale(0.24, 0.2) translate(120%, 140%);
+  -ms-transform: rotate(90deg) scale(0.24, 0.2) translate(120%, 140%);
+  transform: rotate(90deg) scale(0.24, 0.2) translate(120%, 140%); }
+
+.marka.marka-icon-signal-three i:nth-child(2), .marka.marka-icon-signal-three-two i:nth-child(2), .marka.marka-icon-signal-three-two i:nth-child(3) {
+  -webkit-transform: rotate(90deg) scale(0.48, 0.2) translate(35%, 0);
+  -ms-transform: rotate(90deg) scale(0.48, 0.2) translate(35%, 0);
+  transform: rotate(90deg) scale(0.48, 0.2) translate(35%, 0); }
+
+.marka.marka-icon-signal-three i:nth-child(3) {
+  -webkit-transform: rotate(90deg) scale(0.8, 0.2) translate(0%, -140%);
+  -ms-transform: rotate(90deg) scale(0.8, 0.2) translate(0%, -140%);
+  transform: rotate(90deg) scale(0.8, 0.2) translate(0%, -140%); }
+
+.marka.marka-icon-sort-half i {
+  border-radius: 0 30%;
+  -webkit-transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  -ms-transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%); }
+
+.marka.marka-icon-sort-half i:nth-child(2n) {
+  -webkit-transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  -ms-transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%); }
+
+.marka.marka-icon-sort-half i:nth-child(3n) {
+  -webkit-transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  -ms-transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%); }
+
+.marka.marka-icon-sort i {
+  border-radius: 0 30%;
+  -webkit-transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  -ms-transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  transform: rotate(-60deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%); }
+
+.marka.marka-icon-sort i:nth-child(2) {
+  -webkit-transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  -ms-transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  transform: rotate(0deg) skewX(-30deg) scale(0.25) translate(-60%, -70%); }
+
+.marka.marka-icon-sort i:nth-child(3) {
+  -webkit-transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  -ms-transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  transform: rotate(90deg) skewY(-30deg) scale(0.25) translate(-70%, -60%); }
+
+.marka.marka-icon-sort i:nth-child(4) {
+  -webkit-transform: rotate(120deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  -ms-transform: rotate(120deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%);
+  transform: rotate(120deg) skewX(-30deg) scale(0.25, 0.216) translate(60%, -60%); }
+
+.marka.marka-icon-sort i:nth-child(5) {
+  -webkit-transform: rotate(180deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  -ms-transform: rotate(180deg) skewX(-30deg) scale(0.25) translate(-60%, -70%);
+  transform: rotate(180deg) skewX(-30deg) scale(0.25) translate(-60%, -70%); }
+
+.marka.marka-icon-sort i:nth-child(6) {
+  -webkit-transform: rotate(270deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  -ms-transform: rotate(270deg) skewY(-30deg) scale(0.25) translate(-70%, -60%);
+  transform: rotate(270deg) skewY(-30deg) scale(0.25) translate(-70%, -60%); }
+
+.marka.marka-icon-square-check i {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-check i:last-child {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%);
+  transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%); }
+
+.marka.marka-icon-square-check i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%);
+  -ms-transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%);
+  transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%); }
+
+.marka.marka-icon-square-minus i {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-minus i:last-child, .marka.marka-icon-square-minus i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o-check i {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%);
+  transform: rotate(-45deg) scale(0.5, 0.125) translate(7%, 35%); }
+
+.marka.marka-icon-square-o-check i:nth-child(1) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-o-check i:nth-child(2) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-square-o-check i:nth-child(3) {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%);
+  -ms-transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%);
+  transform: rotate(45deg) scale(0.3, 0.125) translate(-15%, 123%); }
+
+.marka.marka-icon-square-o-filled i {
+  border-radius: 10%;
+  -webkit-transform: rotate(0deg) scale(0.5);
+  -ms-transform: rotate(0deg) scale(0.5);
+  transform: rotate(0deg) scale(0.5); }
+
+.marka.marka-icon-square-o-filled i:nth-child(1) {
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8); }
+
+.marka.marka-icon-square-o-filled i:nth-child(2) {
+  -webkit-transform: rotate(0deg) scale(0.65);
+  -ms-transform: rotate(0deg) scale(0.65);
+  transform: rotate(0deg) scale(0.65); }
+
+.marka.marka-icon-square-o-minus i {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o-minus i:nth-child(1) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-o-minus i:nth-child(2) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-square-o-plus i {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o-plus i:nth-child(1) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-o-plus i:nth-child(2) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-square-o-plus i:nth-child(3) {
+  border-radius: 0;
+  -webkit-transform: rotate(90deg) scale(0.5, 0.125);
+  -ms-transform: rotate(90deg) scale(0.5, 0.125);
+  transform: rotate(90deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o-times i {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(45deg) scale(0.5, 0.125);
+  transform: rotate(45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o-times i:nth-child(1) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-o-times i:nth-child(2) {
+  border-radius: 10%;
+  -webkit-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  transform: scale(0.65); }
+
+.marka.marka-icon-square-o-times i:nth-child(3) {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125);
+  transform: rotate(-45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-o i {
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  border-radius: 10%; }
+
+.marka.marka-icon-square-o i:nth-child(1) {
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8); }
+
+.marka.marka-icon-square-o i:nth-child(2) {
+  -webkit-transform: rotate(0deg) scale(0.65);
+  -ms-transform: rotate(0deg) scale(0.65);
+  transform: rotate(0deg) scale(0.65); }
+
+.marka.marka-icon-square-plus i {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-plus i:last-child {
+  border-radius: 0;
+  -webkit-transform: rotate(0deg) scale(0.5, 0.125);
+  -ms-transform: rotate(0deg) scale(0.5, 0.125);
+  transform: rotate(0deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-plus i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(90deg) scale(0.5, 0.125);
+  -ms-transform: rotate(90deg) scale(0.5, 0.125);
+  transform: rotate(90deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-times i {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-square-times i:last-child {
+  border-radius: 0;
+  -webkit-transform: rotate(45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(45deg) scale(0.5, 0.125);
+  transform: rotate(45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square-times i:nth-last-child(2) {
+  border-radius: 0;
+  -webkit-transform: rotate(-45deg) scale(0.5, 0.125);
+  -ms-transform: rotate(-45deg) scale(0.5, 0.125);
+  transform: rotate(-45deg) scale(0.5, 0.125); }
+
+.marka.marka-icon-square i {
+  border-radius: 10%;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8); }
+
+.marka.marka-icon-times i {
+  -webkit-transform: rotate(45deg) scale(0.8, 0.2);
+  -ms-transform: rotate(45deg) scale(0.8, 0.2);
+  transform: rotate(45deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-times i:nth-child(2) {
+  -webkit-transform: rotate(-45deg) scale(0.8, 0.2);
+  -ms-transform: rotate(-45deg) scale(0.8, 0.2);
+  transform: rotate(-45deg) scale(0.8, 0.2); }
+
+.marka.marka-icon-triangle i {
+  border-radius: 0 30%;
+  -webkit-transform: rotate(-60deg) skewX(-30deg) scale(0.5, 0.433) translate(2%, -5%);
+  -ms-transform: rotate(-60deg) skewX(-30deg) scale(0.5, 0.433) translate(2%, -5%);
+  transform: rotate(-60deg) skewX(-30deg) scale(0.5, 0.433) translate(2%, -5%); }
+
+.marka.marka-icon-triangle i:nth-child(2) {
+  -webkit-transform: rotate(180deg) skewX(-30deg) scale(0.5) translate(5%, -30%);
+  -ms-transform: rotate(180deg) skewX(-30deg) scale(0.5) translate(5%, -30%);
+  transform: rotate(180deg) skewX(-30deg) scale(0.5) translate(5%, -30%); }
+
+.marka.marka-icon-triangle i:nth-child(3) {
+  -webkit-transform: rotate(90deg) skewY(-30deg) scale(0.5) translate(30%, -2%);
+  -ms-transform: rotate(90deg) skewY(-30deg) scale(0.5) translate(30%, -2%);
+  transform: rotate(90deg) skewY(-30deg) scale(0.5) translate(30%, -2%); }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html, body {
+  height: 100%; }
+
+nav {
+  position: fixed;
+  left: 0;
+  width: 20em;
+  height: 100%;
+  margin: 0;
+  background-color: #1a304d;
+  color: #FFF; }
+  nav > #navbar-toggle {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #1a304d; }
+  nav > .logo {
+    padding: 0.5em;
+    background-color: #FFF; }
+    nav > .logo img {
+      max-width: 100%;
+      max-height: 100%; }
+  nav > .header {
+    width: 100%;
+    margin: 0;
+    padding: 0.5em 0;
+    text-align: center;
+    background-color: #0d1827; }
+  nav > .desc {
+    width: 100%;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+    background-color: #14243a; }
+
+#main-container {
+  width: -webkit-calc(100% - 20em);
+  width: calc(100% - 20em);
+  height: 100%;
+  margin-left: 20em; }
+  #main-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #main-container #logo-container {
+    float: left;
+    width: 100%;
+    height: 53px;
+    padding-left: 53px; }
+    #main-container #logo-container img {
+      float: left;
+      max-height: 100%;
+      max-width: 100%;
+      padding: 4px; }
+      #main-container #logo-container img.dark {
+        background-color: #1a304d; }
+
+#test-container-a {
+  width: 100%;
+  padding: 0.5em;
+  float: left;
+  background-color: #e6e6e6; }
+
+#test-container-b {
+  width: 100%;
+  padding: 0.5em;
+  float: left;
+  background-color: #cccccc; }
+
+#robot-name {
+  width: 100%; }
+  #robot-name h1 {
+    text-align: center; }
+
+.battery-indicator {
+  width: 100%;
+  background-color: #0d1827; }
+  .battery-indicator:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .battery-indicator .header {
+    float: left;
+    width: 50%; }
+    .battery-indicator .header h1 {
+      margin: 0;
+      margin-top: 0.375em;
+      padding: 0;
+      font-size: 2.5em;
+      text-align: center; }
+  .battery-indicator .battery-container {
+    float: left;
+    width: 50%;
+    margin: 0.5em 0; }
+    .battery-indicator .battery-container:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .battery-indicator .battery-container .battery {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      border: 5px solid #FFF;
+      width: -webkit-calc(100% - 25px - 0.5em);
+      width: calc(100% - 25px - 0.5em);
+      height: 3em;
+      padding: .25em;
+      position: relative; }
+      .battery-indicator .battery-container .battery:after {
+        content: "";
+        width: .75em;
+        height: 2.5em;
+        background: #FFF;
+        display: block;
+        position: absolute;
+        right: -.75em;
+        top: .5em; }
+      .battery-indicator .battery-container .battery .level {
+        display: block;
+        background: #FFF;
+        height: 100%; }
+
+.robot-log-container {
+  padding: 0.5em; }
+  .robot-log-container h2 {
+    margin: 0;
+    margin-bottom: 0.5em; }
+  .robot-log-container #robot-log {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0; }
+    .robot-log-container #robot-log li {
+      margin-bottom: 0.5em; }
+      .robot-log-container #robot-log li:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .robot-log-container #robot-log li:nth-child(2n + 1) .content {
+        background-color: #070c14; }
+      .robot-log-container #robot-log li:nth-child(2n + 1) .triangle {
+        border-top: 10px solid #070c14;
+        border-right: 10px solid #070c14; }
+      .robot-log-container #robot-log li .triangle {
+        float: left;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-top: 10px solid #0d1827;
+        border-right: 10px solid #0d1827; }
+      .robot-log-container #robot-log li .content {
+        float: left;
+        width: -webkit-calc(100% - 20px);
+        width: calc(100% - 20px);
+        padding: 0.5em;
+        background-color: #0d1827; }
+        .robot-log-container #robot-log li .content p {
+          margin: 0; }
+        .robot-log-container #robot-log li .content .time {
+          margin-top: 0.5em;
+          text-align: right;
+          color: white; }
