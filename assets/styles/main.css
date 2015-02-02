@@ -789,7 +789,7 @@ nav.small-nav .battery-indicator {
   nav.small-nav .battery-indicator .battery-container {
     width: 100%;
     margin: 0;
-    padding: 4px; }
+    padding: 5px; }
     nav.small-nav .battery-indicator .battery-container .battery {
       -webkit-box-sizing: content-box;
       -moz-box-sizing: content-box;
@@ -797,13 +797,13 @@ nav.small-nav .battery-indicator {
       border: 2px solid #FFF;
       width: -webkit-calc(100% - 11px);
       width: calc(100% - 11px);
-      height: 20px;
+      height: 18px;
       padding: 2px;
       position: relative; }
       nav.small-nav .battery-indicator .battery-container .battery:after {
         content: "";
         width: 4px;
-        height: 20px;
+        height: 18px;
         background: #FFF;
         display: block;
         position: absolute;

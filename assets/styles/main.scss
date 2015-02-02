@@ -208,20 +208,20 @@ nav.small-nav{
 		.battery-container{
 			width: 100%;
 			margin: 0;
-			padding: 4px;
+			padding: 5px;
 
 			.battery {
 				box-sizing: content-box;
 				border:2px solid #FFF;
 				width:calc(100% - 11px);
-				height: 20px;
+				height: 18px;
 				padding:2px;
 				position:relative;
 
 				&:after {
 					content:"";
 					width:4px;
-					height:20px;
+					height:18px;
 					background:#FFF;
 					display:block;
 					position:absolute;
