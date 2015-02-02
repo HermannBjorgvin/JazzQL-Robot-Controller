@@ -69,6 +69,15 @@ require(['jquery', 'marka'], function($){
 	});
 });
 
+/*require([], function(){
+
+	window.onkeydown = function(e){
+		e.preventDefault();
+		console.log('key: ' + e.keyCode);
+	};
+
+});*/
+
 // Backbone app
 require(['app'], function(App){
 	App.initialize();

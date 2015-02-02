@@ -152,8 +152,6 @@ nav{
 		}
 	}
 
-
-
 	.battery-container{
 		@include scut-clearfix;
 		float: left;
@@ -214,14 +212,14 @@ nav.small-nav{
 				box-sizing: content-box;
 				border:2px solid #FFF;
 				width:calc(100% - 11px);
-				height: 18px;
+				height: 16px;
 				padding:2px;
 				position:relative;
 
 				&:after {
 					content:"";
 					width:4px;
-					height:18px;
+					height:16px;
 					background:#FFF;
 					display:block;
 					position:absolute;
@@ -233,7 +231,7 @@ nav.small-nav{
 
 		.header{
 			position: absolute;
-			top: 26px;
+			top: 24px;
 			width: 100%;
 			font-size: 7px;
 
@@ -378,13 +376,78 @@ nav.small-nav{
 					.message{
 						display: block;
 						position: absolute;
-						top: 26px;
+						top: 20px;
 						left: 100%;
 						width: 300px;
 
     					word-wrap: break-word;
 					}
 				}
+			}
+		}
+	}
+}
+
+.keyboard-container{
+	float: left;
+	width: 100%;
+
+	background-color: lighten(#d5c2a1, 10%);
+
+	.keyboard{
+		@include scut-clearfix;
+		width: 100%;
+		padding: 0.125em;
+
+		.key{
+			float: left;
+			width: calc(100% / 15 - 0.25em);
+			height: 3em;
+			margin: 0.125em;
+			padding-top: 1em;
+
+			background-color: lighten(#d5c2a1, 20%);
+
+			line-height: 1em;
+			font-weight: bold;
+			text-align: center;
+
+			// Key states
+			&.key-down{
+				background-color: #999;
+			}
+
+			&.key-dark{
+				background-color: lighten(#ad9c7f, 15%);
+			}
+
+			// Alters padding and line height for multi-letter keys
+			&.key-mk{
+				padding-top: 0.25em;
+				line-height: 1.25em;
+			}
+
+			// Various key sizes
+			&.key-2{
+				width: calc(100% / 15 * 2 - 0.25em);
+			}
+			&.key-1-5{
+				width: calc(100% / 15 * 1.5 - 0.25em);
+			}
+			&.key-1-75{
+				width: calc(100% / 15 * 1.75 - 0.25em);
+			}
+			&.key-2-25{
+				width: calc(100% / 15 * 2.25 - 0.25em);
+			}
+			&.key-2-75{
+				width: calc(100% / 15 * 2.75 - 0.25em);
+			}
+			&.key-7{
+				width: calc(100% / 15 * 7 - 0.25em);
+			}
+			&.hidden{
+				opacity: 0;
 			}
 		}
 	}

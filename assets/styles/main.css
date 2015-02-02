@@ -797,13 +797,13 @@ nav.small-nav .battery-indicator {
       border: 2px solid #FFF;
       width: -webkit-calc(100% - 11px);
       width: calc(100% - 11px);
-      height: 18px;
+      height: 16px;
       padding: 2px;
       position: relative; }
       nav.small-nav .battery-indicator .battery-container .battery:after {
         content: "";
         width: 4px;
-        height: 18px;
+        height: 16px;
         background: #FFF;
         display: block;
         position: absolute;
@@ -811,7 +811,7 @@ nav.small-nav .battery-indicator {
         top: 2px; }
   nav.small-nav .battery-indicator .header {
     position: absolute;
-    top: 26px;
+    top: 24px;
     width: 100%;
     font-size: 7px; }
     nav.small-nav .battery-indicator .header h1 {
@@ -906,7 +906,57 @@ nav.small-nav .robot-log-container {
     nav.small-nav .robot-log-container #robot-log li:hover .message {
       display: block;
       position: absolute;
-      top: 26px;
+      top: 20px;
       left: 100%;
       width: 300px;
       word-wrap: break-word; }
+
+.keyboard-container {
+  float: left;
+  width: 100%;
+  background-color: #e5d9c4; }
+  .keyboard-container .keyboard {
+    width: 100%;
+    padding: 0.125em; }
+    .keyboard-container .keyboard:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .keyboard-container .keyboard .key {
+      float: left;
+      width: -webkit-calc(100% / 15 - 0.25em);
+      width: calc(100% / 15 - 0.25em);
+      height: 3em;
+      margin: 0.125em;
+      padding-top: 1em;
+      background-color: #f4f0e8;
+      line-height: 1em;
+      font-weight: bold;
+      text-align: center; }
+      .keyboard-container .keyboard .key.key-down {
+        background-color: #999; }
+      .keyboard-container .keyboard .key.key-dark {
+        background-color: #cbc0ae; }
+      .keyboard-container .keyboard .key.key-mk {
+        padding-top: 0.25em;
+        line-height: 1.25em; }
+      .keyboard-container .keyboard .key.key-2 {
+        width: -webkit-calc(100% / 15 * 2 - 0.25em);
+        width: calc(100% / 15 * 2 - 0.25em); }
+      .keyboard-container .keyboard .key.key-1-5 {
+        width: -webkit-calc(100% / 15 * 1.5 - 0.25em);
+        width: calc(100% / 15 * 1.5 - 0.25em); }
+      .keyboard-container .keyboard .key.key-1-75 {
+        width: -webkit-calc(100% / 15 * 1.75 - 0.25em);
+        width: calc(100% / 15 * 1.75 - 0.25em); }
+      .keyboard-container .keyboard .key.key-2-25 {
+        width: -webkit-calc(100% / 15 * 2.25 - 0.25em);
+        width: calc(100% / 15 * 2.25 - 0.25em); }
+      .keyboard-container .keyboard .key.key-2-75 {
+        width: -webkit-calc(100% / 15 * 2.75 - 0.25em);
+        width: calc(100% / 15 * 2.75 - 0.25em); }
+      .keyboard-container .keyboard .key.key-7 {
+        width: -webkit-calc(100% / 15 * 7 - 0.25em);
+        width: calc(100% / 15 * 7 - 0.25em); }
+      .keyboard-container .keyboard .key.hidden {
+        opacity: 0; }
