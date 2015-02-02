@@ -32,9 +32,22 @@ nav{
 
 	>#navbar-toggle{
 		position: absolute;
+		z-index: 9001;
 		top: 0;
 		left: 100%;
 		background-color: $blue;
+	}
+
+	&.small-nav{
+		>.small-nav-bevel{
+			position: absolute;
+			top: 0;
+			left: 100%;
+			height: 100%;
+			width: 53px;
+
+			background-color: $blue;
+		}
 	}
 
 	>.logo{
@@ -81,11 +94,19 @@ nav{
 			max-height: 100%;
 			max-width: 100%;
 
-			padding: 4px;
+			padding: 4px 0 4px 4px;
 
 			&.dark{
 				background-color: $blue;
 			}
+		}
+	}
+
+	&.small-nav{
+		padding-left: 53px;
+
+		#logo-container{
+			padding-left: 0;
 		}
 	}
 }
@@ -99,6 +120,7 @@ nav{
 
 #test-container-b{
 	width: 100%;
+	height: 100vh;
 	padding: 0.5em;
 	float: left;
 	background-color: darken(#FFF, 20%);
@@ -130,6 +152,8 @@ nav{
 		}
 	}
 
+
+
 	.battery-container{
 		@include scut-clearfix;
 		float: left;
@@ -160,12 +184,66 @@ nav{
 				background: #FFF;
 				height:100%;
 			}
+
+			.small-level{
+				display: none;
+			}
 		}
 
 
 	}
 
 }
+
+// small battery
+nav.small-nav{
+	.battery-indicator{
+		position: absolute;
+		top: 53px;
+		left: 100%;
+		width: 53px;
+		height: 53px;
+		background-color: darken($blue, 15%);
+
+		.battery-container{
+			width: 100%;
+			margin: 0;
+			padding: 4px;
+
+			.battery {
+				box-sizing: content-box;
+				border:2px solid #FFF;
+				width:calc(100% - 11px);
+				height: 20px;
+				padding:2px;
+				position:relative;
+
+				&:after {
+					content:"";
+					width:4px;
+					height:20px;
+					background:#FFF;
+					display:block;
+					position:absolute;
+					right:-5px;
+					top:2px;
+				}
+			}
+		}
+
+		.header{
+			position: absolute;
+			top: 26px;
+			width: 100%;
+			font-size: 7px;
+
+			h1{
+				text-align: center;
+			}
+		}
+	}
+}
+
 
 .robot-log-container{
 
@@ -184,43 +262,128 @@ nav{
 			margin-bottom: 0.5em;
 
 			&:nth-child(2n + 1){ // darken every other message
+				.message{
+					.content{
+						background-color: darken($blue, 15%);
+					}
+					.triangle{
+						border-top: 10px solid darken($blue, 15%);
+						border-right: 10px solid darken($blue, 15%);
+					}
+				}
+			}
+
+			.message-icon{
+				display: none;
+			}
+
+			.message{
+				.triangle{ // little thing on the left side of the content #designer
+					float: left;
+					box-sizing: content-box;
+					width: 0; 
+					height: 0; 
+					border-bottom: 10px solid transparent;
+					border-left: 10px solid transparent;
+					
+					border-top: 10px solid darken($blue, 10%);
+					border-right: 10px solid darken($blue, 10%);
+				}
+
 				.content{
-					background-color: darken($blue, 15%);
-				}
-				.triangle{
-					border-top: 10px solid darken($blue, 15%);
-					border-right: 10px solid darken($blue, 15%);
+					float: left;
+					width: calc(100% - 20px);
+					padding: 0.5em;
+					background-color: darken($blue, 10%);
+
+					p{
+						margin: 0;
+					}
+					.log{
+	  					// word-break: break-all;
+					}
+					.time{
+						margin-top: 0.5em;
+						text-align: right;
+						color: darken(#FFF, 0%);
+					}
 				}
 			}
+		}
+	}
+}
 
-			.triangle{ // little thing on the left side of the content #designer
-				float: left;
-				box-sizing: content-box;
-				width: 0; 
-				height: 0; 
-				border-bottom: 10px solid transparent;
-				border-left: 10px solid transparent;
-				
-				border-top: 10px solid darken($blue, 10%);
-				border-right: 10px solid darken($blue, 10%);
-			}
+// small nav log
+nav.small-nav{
+	.robot-log-container{
+		position: absolute;
+		top: 106px;
+		left: 100%;
+		padding: 0;
 
-			.content{
-				float: left;
-				width: calc(100% - 20px);
-				padding: 0.5em;
-				background-color: darken($blue, 10%);
+		h2{
+			display: none;
+		}
 
-				p{
-					margin: 0;
+		#robot-log{
+			li{
+				display: block;
+				position: relative;
+				width: 53px;
+				height: 53px;
+				margin: 0;
+				padding-left: 10px;
+				padding-top: 9px;
+
+				background-color: darken($blue, 15%);
+
+				&:nth-child(2n + 1){ // darken every other message
+					background-color: darken($blue, 5%);
 				}
-				.log{
-  					// word-break: break-all;
+
+				.message-icon{
+					float: left;
+					box-sizing: content-box;
+					display: block;
+
+					.square{
+						width: 23px;
+						height: 15px;
+						border: 5px solid #FFF;
+
+						//background-color: #F0F;
+						background: repeating-linear-gradient(
+						  0deg,
+						  $blue,
+						  $blue 3px,
+						  #FFF 3px,
+						  #FFF 6px
+						);
+					}
+					.triangle{
+						width: 0;
+						height: 0;
+						margin-left: 15px;
+
+						border: 5px solid transparent;
+						border-top: 5px solid #FFF;
+						border-left: 5px solid #FFF;
+					}
 				}
-				.time{
-					margin-top: 0.5em;
-					text-align: right;
-					color: darken(#FFF, 0%);
+				.message{
+					display: none;
+				}
+
+				&:hover{
+					.message{
+						display: block;
+						position: absolute;
+						top: 26px;
+						left: 100%;
+						width: 300px;
+
+    					word-wrap: break-word;
+					}
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-// views/log/list.js
+// views/log/list
 
 define([
 	'jquery',

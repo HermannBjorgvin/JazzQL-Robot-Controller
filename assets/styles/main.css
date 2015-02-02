@@ -655,8 +655,16 @@ nav {
   color: #FFF; }
   nav > #navbar-toggle {
     position: absolute;
+    z-index: 9001;
     top: 0;
     left: 100%;
+    background-color: #1a304d; }
+  nav.small-nav > .small-nav-bevel {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 53px;
     background-color: #1a304d; }
   nav > .logo {
     padding: 0.5em;
@@ -695,9 +703,13 @@ nav {
       float: left;
       max-height: 100%;
       max-width: 100%;
-      padding: 4px; }
+      padding: 4px 0 4px 4px; }
       #main-container #logo-container img.dark {
         background-color: #1a304d; }
+  #main-container.small-nav {
+    padding-left: 53px; }
+    #main-container.small-nav #logo-container {
+      padding-left: 0; }
 
 #test-container-a {
   width: 100%;
@@ -707,6 +719,7 @@ nav {
 
 #test-container-b {
   width: 100%;
+  height: 100vh;
   padding: 0.5em;
   float: left;
   background-color: #cccccc; }
@@ -763,6 +776,46 @@ nav {
         display: block;
         background: #FFF;
         height: 100%; }
+      .battery-indicator .battery-container .battery .small-level {
+        display: none; }
+
+nav.small-nav .battery-indicator {
+  position: absolute;
+  top: 53px;
+  left: 100%;
+  width: 53px;
+  height: 53px;
+  background-color: #070c14; }
+  nav.small-nav .battery-indicator .battery-container {
+    width: 100%;
+    margin: 0;
+    padding: 4px; }
+    nav.small-nav .battery-indicator .battery-container .battery {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      border: 2px solid #FFF;
+      width: -webkit-calc(100% - 11px);
+      width: calc(100% - 11px);
+      height: 20px;
+      padding: 2px;
+      position: relative; }
+      nav.small-nav .battery-indicator .battery-container .battery:after {
+        content: "";
+        width: 4px;
+        height: 20px;
+        background: #FFF;
+        display: block;
+        position: absolute;
+        right: -5px;
+        top: 2px; }
+  nav.small-nav .battery-indicator .header {
+    position: absolute;
+    top: 26px;
+    width: 100%;
+    font-size: 7px; }
+    nav.small-nav .battery-indicator .header h1 {
+      text-align: center; }
 
 .robot-log-container {
   padding: 0.5em; }
@@ -780,12 +833,14 @@ nav {
         content: "";
         display: table;
         clear: both; }
-      .robot-log-container #robot-log li:nth-child(2n + 1) .content {
+      .robot-log-container #robot-log li:nth-child(2n + 1) .message .content {
         background-color: #070c14; }
-      .robot-log-container #robot-log li:nth-child(2n + 1) .triangle {
+      .robot-log-container #robot-log li:nth-child(2n + 1) .message .triangle {
         border-top: 10px solid #070c14;
         border-right: 10px solid #070c14; }
-      .robot-log-container #robot-log li .triangle {
+      .robot-log-container #robot-log li .message-icon {
+        display: none; }
+      .robot-log-container #robot-log li .message .triangle {
         float: left;
         -webkit-box-sizing: content-box;
         -moz-box-sizing: content-box;
@@ -796,15 +851,62 @@ nav {
         border-left: 10px solid transparent;
         border-top: 10px solid #0d1827;
         border-right: 10px solid #0d1827; }
-      .robot-log-container #robot-log li .content {
+      .robot-log-container #robot-log li .message .content {
         float: left;
         width: -webkit-calc(100% - 20px);
         width: calc(100% - 20px);
         padding: 0.5em;
         background-color: #0d1827; }
-        .robot-log-container #robot-log li .content p {
+        .robot-log-container #robot-log li .message .content p {
           margin: 0; }
-        .robot-log-container #robot-log li .content .time {
+        .robot-log-container #robot-log li .message .content .time {
           margin-top: 0.5em;
           text-align: right;
           color: white; }
+
+nav.small-nav .robot-log-container {
+  position: absolute;
+  top: 106px;
+  left: 100%;
+  padding: 0; }
+  nav.small-nav .robot-log-container h2 {
+    display: none; }
+  nav.small-nav .robot-log-container #robot-log li {
+    display: block;
+    position: relative;
+    width: 53px;
+    height: 53px;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 9px;
+    background-color: #070c14; }
+    nav.small-nav .robot-log-container #robot-log li:nth-child(2n + 1) {
+      background-color: #14243a; }
+    nav.small-nav .robot-log-container #robot-log li .message-icon {
+      float: left;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      display: block; }
+      nav.small-nav .robot-log-container #robot-log li .message-icon .square {
+        width: 23px;
+        height: 15px;
+        border: 5px solid #FFF;
+        background: -webkit-repeating-linear-gradient(90deg, #1a304d, #1a304d 3px, white 3px, white 6px);
+        background: repeating-linear-gradient(0deg, #1a304d, #1a304d 3px, white 3px, white 6px); }
+      nav.small-nav .robot-log-container #robot-log li .message-icon .triangle {
+        width: 0;
+        height: 0;
+        margin-left: 15px;
+        border: 5px solid transparent;
+        border-top: 5px solid #FFF;
+        border-left: 5px solid #FFF; }
+    nav.small-nav .robot-log-container #robot-log li .message {
+      display: none; }
+    nav.small-nav .robot-log-container #robot-log li:hover .message {
+      display: block;
+      position: absolute;
+      top: 26px;
+      left: 100%;
+      width: 300px;
+      word-wrap: break-word; }

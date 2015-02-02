@@ -1,4 +1,4 @@
-// status.js
+// views/battery/status
 
 define([
 	'jquery',

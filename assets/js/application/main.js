@@ -1,4 +1,4 @@
-// Main.js
+// main
 
 // Config
 require.config({
@@ -33,9 +33,10 @@ require(['jquery', 'marka'], function($){
 		var mainContainer = $('#main-container');
 
 		if (navOpen == true){
-			// open
+			// on click closes the nav
 	    	marka.set('bars');
 
+			mainContainer.toggleClass('small-nav');
 			mainContainer.css({
 				width: '100%',
 				marginLeft: '0'
@@ -43,12 +44,15 @@ require(['jquery', 'marka'], function($){
 
 			nav.animate({
 				left: '-20em'
-			}, 400);
+			}, 400, function(){
+				nav.toggleClass('small-nav');
+			});
 		}
 		else{
-			// closed
+			// on click opens the nav
 	    	marka.set('times');
 
+			nav.toggleClass('small-nav');
 			nav.animate({
 				left: '0'
 			}, 400, function(){
@@ -56,6 +60,8 @@ require(['jquery', 'marka'], function($){
 					width: 'calc(100% - 20em)',
 					marginLeft: '20em'
 				});
+
+				mainContainer.toggleClass('small-nav');
 			});
 		};
 

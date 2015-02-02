@@ -1,4 +1,4 @@
-// Router.js
+// router
 
 define([
 	'jquery',
