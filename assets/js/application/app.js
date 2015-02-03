@@ -6,8 +6,9 @@ define([
 	'backbone',
 	'router',
 	'views/log/list',
-	'views/battery/status'
-], function($, _, Backbone, Router, LogListView, BatteryStatusView){
+	'views/battery/status',
+	'views/keyboard/keyboard'
+], function($, _, Backbone, Router, LogListView, BatteryStatusView, KeyboardView){
 	var initialize = function(){
 
 		// Initialize stuff like router here
@@ -18,6 +19,9 @@ define([
 
 		// Battery status view
 		var batteryView = new BatteryStatusView();
+
+		// Keyboard status view
+		var keyboardView = new KeyboardView();
 
 	};
 

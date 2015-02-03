@@ -21,6 +21,7 @@ html, body{
 
 nav{
 	position: fixed;
+	z-index: 100;
 	// left: -20em;
 	left: 0;
 	width: 20em;
@@ -102,11 +103,24 @@ nav{
 		}
 	}
 
+	#keyboard-view{
+		position: fixed;
+		z-index: 50;
+		width: calc(100% - 20em);
+		top: calc(100% - 16.5em);
+		left: 20em;
+	}
+
 	&.small-nav{
 		padding-left: 53px;
 
 		#logo-container{
 			padding-left: 0;
+		}
+
+		#keyboard-view{
+			width: calc(100% - 53px);
+			left: 53px;
 		}
 	}
 }
@@ -190,7 +204,6 @@ nav{
 
 
 	}
-
 }
 
 // small battery
@@ -241,7 +254,6 @@ nav.small-nav{
 		}
 	}
 }
-
 
 .robot-log-container{
 
@@ -392,12 +404,13 @@ nav.small-nav{
 	float: left;
 	width: 100%;
 
-	background-color: lighten(#d5c2a1, 10%);
-
 	.keyboard{
 		@include scut-clearfix;
 		width: 100%;
+		max-width: 50em;
+		margin: 0 auto;
 		padding: 0.125em;
+		background-color: lighten(#d5c2a1, 10%);
 
 		.key{
 			float: left;
@@ -414,11 +427,15 @@ nav.small-nav{
 
 			// Key states
 			&.key-down{
-				background-color: #999;
+				background-color: lighten(#d5c2a1, 5%);
 			}
 
 			&.key-dark{
 				background-color: lighten(#ad9c7f, 15%);
+				
+				&.key-down{
+					background-color: lighten(#ad9c7f, 5%);
+				}
 			}
 
 			// Alters padding and line height for multi-letter keys

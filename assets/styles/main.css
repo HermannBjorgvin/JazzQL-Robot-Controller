@@ -647,6 +647,7 @@ html, body {
 
 nav {
   position: fixed;
+  z-index: 100;
   left: 0;
   width: 20em;
   height: 100%;
@@ -706,10 +707,22 @@ nav {
       padding: 4px 0 4px 4px; }
       #main-container #logo-container img.dark {
         background-color: #1a304d; }
+  #main-container #keyboard-view {
+    position: fixed;
+    z-index: 50;
+    width: -webkit-calc(100% - 20em);
+    width: calc(100% - 20em);
+    top: -webkit-calc(100% - 16.5em);
+    top: calc(100% - 16.5em);
+    left: 20em; }
   #main-container.small-nav {
     padding-left: 53px; }
     #main-container.small-nav #logo-container {
       padding-left: 0; }
+    #main-container.small-nav #keyboard-view {
+      width: -webkit-calc(100% - 53px);
+      width: calc(100% - 53px);
+      left: 53px; }
 
 #test-container-a {
   width: 100%;
@@ -913,11 +926,13 @@ nav.small-nav .robot-log-container {
 
 .keyboard-container {
   float: left;
-  width: 100%;
-  background-color: #e5d9c4; }
+  width: 100%; }
   .keyboard-container .keyboard {
     width: 100%;
-    padding: 0.125em; }
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 0.125em;
+    background-color: #e5d9c4; }
     .keyboard-container .keyboard:after {
       content: "";
       display: table;
@@ -934,9 +949,11 @@ nav.small-nav .robot-log-container {
       font-weight: bold;
       text-align: center; }
       .keyboard-container .keyboard .key.key-down {
-        background-color: #999; }
+        background-color: #ddcdb3; }
       .keyboard-container .keyboard .key.key-dark {
         background-color: #cbc0ae; }
+        .keyboard-container .keyboard .key.key-dark.key-down {
+          background-color: #b7a88f; }
       .keyboard-container .keyboard .key.key-mk {
         padding-top: 0.25em;
         line-height: 1.25em; }
