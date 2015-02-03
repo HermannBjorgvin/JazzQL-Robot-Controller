@@ -69,6 +69,7 @@ require(['jquery', 'marka'], function($){
 	});
 });
 
+// KEyboard fun
 require(['jquery'], function($){
 
 	window.onkeydown = function(e){
@@ -100,7 +101,6 @@ require(['jquery'], function($){
 	};
 
 });
-
 
 // Backbone app
 require(['app'], function(App){

@@ -11,35 +11,20 @@ define([
 		initialize: function(){
 			console.log('KeyboardView initialized');
 		},
-		events:{
-			'keydown #keyboard-view': 'keyboardKeydown',
-			'keyup #keyboard-view': 'keyboardKeyup'
+		events: {
+			'keydown': 'keyboardKeydown',
+			'keyup': 'keyboardKeyup',
+			'click .keyboard': 'clicktest'
 		},
 		keyboardKeydown: function(e){
 			console.log('keydown');
-			e.preventDefault();
-			var keyCode = e.keyCode;
-
-			$('#keyboard-view').children('.key').each(function(){
-				var key = $(this);
-
-				if (key.attr('keyCode') == keyCode) {
-					key.addClass('key-down');
-				};
-			});
 		},
 		keyboardKeyup: function(e){
 			console.log('keyup');
-			e.preventDefault();
-			var keyCode = e.keyCode;
-
-			$('#keyboard-view').children('.key').each(function(){
-				var key = $(this);
-
-				if (key.attr('keyCode') == keyCode) {
-					key.removeClass('key-down');
-				};
-			});
+		},
+		clicktest: function(){
+			// just to see if events are even working
+			console.log('clicktest');
 		}
 	});
 

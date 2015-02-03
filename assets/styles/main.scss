@@ -445,14 +445,17 @@ nav.small-nav{
 			}
 
 			// Various key sizes
-			&.key-2{
-				width: calc(100% / 15 * 2 - 0.25em);
+			&.hidden{
+				opacity: 0;
 			}
 			&.key-1-5{
 				width: calc(100% / 15 * 1.5 - 0.25em);
 			}
 			&.key-1-75{
 				width: calc(100% / 15 * 1.75 - 0.25em);
+			}
+			&.key-2{
+				width: calc(100% / 15 * 2 - 0.25em);
 			}
 			&.key-2-25{
 				width: calc(100% / 15 * 2.25 - 0.25em);
@@ -462,9 +465,6 @@ nav.small-nav{
 			}
 			&.key-7{
 				width: calc(100% / 15 * 7 - 0.25em);
-			}
-			&.hidden{
-				opacity: 0;
 			}
 		}
 	}

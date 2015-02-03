@@ -957,15 +957,17 @@ nav.small-nav .robot-log-container {
       .keyboard-container .keyboard .key.key-mk {
         padding-top: 0.25em;
         line-height: 1.25em; }
-      .keyboard-container .keyboard .key.key-2 {
-        width: -webkit-calc(100% / 15 * 2 - 0.25em);
-        width: calc(100% / 15 * 2 - 0.25em); }
+      .keyboard-container .keyboard .key.hidden {
+        opacity: 0; }
       .keyboard-container .keyboard .key.key-1-5 {
         width: -webkit-calc(100% / 15 * 1.5 - 0.25em);
         width: calc(100% / 15 * 1.5 - 0.25em); }
       .keyboard-container .keyboard .key.key-1-75 {
         width: -webkit-calc(100% / 15 * 1.75 - 0.25em);
         width: calc(100% / 15 * 1.75 - 0.25em); }
+      .keyboard-container .keyboard .key.key-2 {
+        width: -webkit-calc(100% / 15 * 2 - 0.25em);
+        width: calc(100% / 15 * 2 - 0.25em); }
       .keyboard-container .keyboard .key.key-2-25 {
         width: -webkit-calc(100% / 15 * 2.25 - 0.25em);
         width: calc(100% / 15 * 2.25 - 0.25em); }
@@ -975,5 +977,3 @@ nav.small-nav .robot-log-container {
       .keyboard-container .keyboard .key.key-7 {
         width: -webkit-calc(100% / 15 * 7 - 0.25em);
         width: calc(100% / 15 * 7 - 0.25em); }
-      .keyboard-container .keyboard .key.hidden {
-        opacity: 0; }
