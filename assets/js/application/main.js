@@ -69,39 +69,6 @@ require(['jquery', 'marka'], function($){
 	});
 });
 
-// KEyboard fun
-require(['jquery'], function($){
-
-	window.onkeydown = function(e){
-		console.log('keydown');
-		e.preventDefault();
-		var keyCode = e.keyCode;
-
-		$('.key').each(function(){
-			var key = $(this);
-
-			if (key.attr('keyCode') == keyCode) {
-				key.addClass('key-down');
-			};
-		});
-	};
-
-	window.onkeyup = function(e){
-		console.log('keyup');
-		e.preventDefault();
-		var keyCode = e.keyCode;
-
-		$('.key').each(function(){
-			var key = $(this);
-
-			if (key.attr('keyCode') == keyCode) {
-				key.removeClass('key-down');
-			};
-		});
-	};
-
-});
-
 // Backbone app
 require(['app'], function(App){
 	App.initialize();
