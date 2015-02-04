@@ -89,6 +89,7 @@ nav{
 		width: 100%;
 		height: 53px;
 		padding-left: 53px;
+		background-color: #EEE;
 
 		img{
 			float: left;
@@ -214,7 +215,8 @@ nav.small-nav{
 		left: 100%;
 		width: 53px;
 		height: 53px;
-		background-color: darken($blue, 15%);
+		// background-color: darken($blue, 15%);
+		background-color: $blue;
 
 		.battery-container{
 			width: 100%;
@@ -345,11 +347,11 @@ nav.small-nav{
 				padding-left: 10px;
 				padding-top: 9px;
 
-				background-color: darken($blue, 15%);
-
+				background-color: $blue;
+				/*background-color: darken($blue, 15%);
 				&:nth-child(2n + 1){ // darken every other message
 					background-color: darken($blue, 5%);
-				}
+				}*/
 
 				.message-icon{
 					float: left;
@@ -388,7 +390,7 @@ nav.small-nav{
 					.message{
 						display: block;
 						position: absolute;
-						top: 20px;
+						top: 9px;
 						left: 100%;
 						width: 300px;
 
@@ -410,7 +412,10 @@ nav.small-nav{
 		max-width: 50em;
 		margin: 0 auto;
 		padding: 0.125em;
-		background-color: lighten(#d5c2a1, 10%);
+
+		// IBM colors
+		background-color: lighten(#d5c2a1, 15%);
+		// background-color: #FFF;
 
 		.key{
 			float: left;
@@ -419,7 +424,10 @@ nav.small-nav{
 			margin: 0.125em;
 			padding-top: 1em;
 
+			// IBM colors
 			background-color: lighten(#d5c2a1, 20%);
+			// background-color: #FFF;
+			color: #333;
 
 			line-height: 1em;
 			font-weight: bold;
@@ -427,14 +435,20 @@ nav.small-nav{
 
 			// Key states
 			&.key-down{
-				background-color: lighten(#d5c2a1, 5%);
+				// IBM colors
+				background-color: lighten(#d5c2a1, 10%);
+				// background-color: darken(#CCC, 10%);
 			}
 
 			&.key-dark{
+				// IBM colors
 				background-color: lighten(#ad9c7f, 15%);
+				// background-color: #CCC;
 				
 				&.key-down{
+					// IBM colors
 					background-color: lighten(#ad9c7f, 5%);
+					// background-color: darken(#CCC, 10%);
 				}
 			}
 
