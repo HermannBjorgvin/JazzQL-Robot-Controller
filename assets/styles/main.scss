@@ -51,16 +51,6 @@ nav{
 		}
 	}
 
-	>.logo{
-		padding: 0.5em;
-		background-color: #FFF;
-
-		img{
-			max-width: 100%;
-			max-height: 100%;
-		}
-	}
-
 	>.header{
 		width: 100%;
 		margin: 0;
@@ -92,11 +82,11 @@ nav{
 		background-color: #EEE;
 
 		img{
-			float: left;
+			float: right;
 			max-height: 100%;
 			max-width: 100%;
 
-			padding: 4px 0 4px 4px;
+			padding: 4px 4px 4px 0;
 
 			&.dark{
 				background-color: $blue;
@@ -160,9 +150,10 @@ nav{
 
 		h1{
 			margin: 0;
-			margin-top: 0.375em;
+			margin-top: 0.525em;
 			padding: 0;
 			font-size: 2.5em;
+			line-height: 1em;
 			text-align: center;
 		}
 	}
@@ -216,7 +207,7 @@ nav.small-nav{
 		width: 53px;
 		height: 53px;
 		// background-color: darken($blue, 15%);
-		background-color: $blue;
+		background-color: darken($blue, 10%);
 
 		.battery-container{
 			width: 100%;
@@ -273,7 +264,7 @@ nav.small-nav{
 			@include scut-clearfix;
 			margin-bottom: 0.5em;
 
-			&:nth-child(2n + 1){ // darken every other message
+			/*&:nth-child(2n + 1){ // darken every other message
 				.message{
 					.content{
 						background-color: darken($blue, 15%);
@@ -283,7 +274,7 @@ nav.small-nav{
 						border-right: 10px solid darken($blue, 15%);
 					}
 				}
-			}
+			}*/
 
 			.message-icon{
 				display: none;
@@ -414,8 +405,8 @@ nav.small-nav{
 		padding: 0.125em;
 
 		// IBM colors
-		background-color: lighten(#d5c2a1, 15%);
-		// background-color: #FFF;
+		// background-color: lighten(#d5c2a1, 15%);
+		background-color: #EEE;
 
 		.key{
 			float: left;
@@ -425,8 +416,8 @@ nav.small-nav{
 			padding-top: 1em;
 
 			// IBM colors
-			background-color: lighten(#d5c2a1, 20%);
-			// background-color: #FFF;
+			// background-color: lighten(#d5c2a1, 20%);
+			background-color: #FFF;
 			color: #333;
 
 			line-height: 1em;
@@ -436,19 +427,27 @@ nav.small-nav{
 			// Key states
 			&.key-down{
 				// IBM colors
-				background-color: lighten(#d5c2a1, 10%);
-				// background-color: darken(#CCC, 10%);
+				// background-color: lighten(#d5c2a1, 10%);
+				background-color: darken(#FFF, 10%);
+			}
+
+			&.key-action{
+				background-color: #B6E0E7;
+
+				&.key-down{
+					background-color: darken(#B6E0E7, 10%);
+				}
 			}
 
 			&.key-dark{
 				// IBM colors
-				background-color: lighten(#ad9c7f, 15%);
-				// background-color: #CCC;
+				// background-color: lighten(#ad9c7f, 15%);
+				background-color: #CCC;
 				
 				&.key-down{
 					// IBM colors
-					background-color: lighten(#ad9c7f, 5%);
-					// background-color: darken(#CCC, 10%);
+					// background-color: lighten(#ad9c7f, 5%);
+					background-color: darken(#CCC, 10%);
 				}
 			}
 

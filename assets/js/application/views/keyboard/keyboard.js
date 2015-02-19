@@ -5,8 +5,9 @@ define([
 	'underscore',
 	'handlebars',
 	'backbone',
-	'text!templates/keyboard/keyboard.html'
-], function($, _, Handlebars, Backbone, keyboardTemplate){
+	'text!templates/keyboard/keyboard.html',
+	'text!settings/keyboard.json'
+], function($, _, Handlebars, Backbone, keyboardTemplate, keyboardSettings){
 
 	var KeyboardView = Backbone.View.extend({
 		el: document,
@@ -16,24 +17,41 @@ define([
 			var self = this;
 
 			// Template
-			var source = keyboardTemplate;
-			var template = Handlebars.compile(source);
+			(function(){
+				var source = keyboardTemplate;
+				var template = Handlebars.compile(source);
 
-			var html = template({s: 's'});
+				var html = template({s: 's'});
 
-			self.$('#keyboard-view').html(html);
+				self.$('#keyboard-view').html(html);
+			}());
+
+			// Keybinding
+			this.keyboardHighlightBoundKeys();
 			
 		},
 		events: {
 			'keydown': 'keyboardKeydown',
 			'keyup': 'keyboardKeyup'
 		},
+		keyboardHighlightBoundKeys: function(){
+			var settings = JSON.parse(keyboardSettings);
+			// console.log(settings);
+
+			$('#keyboard-view .key').each(function(){
+				var key = $(this);
+
+				if ( settings.keys[key.attr('keyCode')] !== undefined ) {
+					key.addClass('key-action');
+				};
+			});
+		},
 		keyboardKeydown: function(e){
 			if (this.isMyKeyCode(e.keyCode)) {
 				e.preventDefault();
 				var keyCode = e.keyCode;
 
-				$('.key').each(function(){
+				$('#keyboard-view .key').each(function(){
 					var key = $(this);
 
 					if (key.attr('keyCode') == keyCode) {
@@ -47,7 +65,7 @@ define([
 				e.preventDefault();
 				var keyCode = e.keyCode;
 
-				$('.key').each(function(){
+				$('#keyboard-view .key').each(function(){
 					var key = $(this);
 
 					if (key.attr('keyCode') == keyCode) {

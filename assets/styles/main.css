@@ -667,12 +667,6 @@ nav {
     height: 100%;
     width: 53px;
     background-color: #1a304d; }
-  nav > .logo {
-    padding: 0.5em;
-    background-color: #FFF; }
-    nav > .logo img {
-      max-width: 100%;
-      max-height: 100%; }
   nav > .header {
     width: 100%;
     margin: 0;
@@ -702,10 +696,10 @@ nav {
     padding-left: 53px;
     background-color: #EEE; }
     #main-container #logo-container img {
-      float: left;
+      float: right;
       max-height: 100%;
       max-width: 100%;
-      padding: 4px 0 4px 4px; }
+      padding: 4px 4px 4px 0; }
       #main-container #logo-container img.dark {
         background-color: #1a304d; }
   #main-container #keyboard-view {
@@ -755,9 +749,10 @@ nav {
     width: 50%; }
     .battery-indicator .header h1 {
       margin: 0;
-      margin-top: 0.375em;
+      margin-top: 0.525em;
       padding: 0;
       font-size: 2.5em;
+      line-height: 1em;
       text-align: center; }
   .battery-indicator .battery-container {
     float: left;
@@ -799,7 +794,7 @@ nav.small-nav .battery-indicator {
   left: 100%;
   width: 53px;
   height: 53px;
-  background-color: #1a304d; }
+  background-color: #0d1827; }
   nav.small-nav .battery-indicator .battery-container {
     width: 100%;
     margin: 0;
@@ -842,16 +837,22 @@ nav.small-nav .battery-indicator {
     margin-top: 0;
     margin-bottom: 0; }
     .robot-log-container #robot-log li {
-      margin-bottom: 0.5em; }
+      margin-bottom: 0.5em;
+      /*&:nth-child(2n + 1){ // darken every other message
+      	.message{
+      		.content{
+      			background-color: darken($blue, 15%);
+      		}
+      		.triangle{
+      			border-top: 10px solid darken($blue, 15%);
+      			border-right: 10px solid darken($blue, 15%);
+      		}
+      	}
+      }*/ }
       .robot-log-container #robot-log li:after {
         content: "";
         display: table;
         clear: both; }
-      .robot-log-container #robot-log li:nth-child(2n + 1) .message .content {
-        background-color: #070c14; }
-      .robot-log-container #robot-log li:nth-child(2n + 1) .message .triangle {
-        border-top: 10px solid #070c14;
-        border-right: 10px solid #070c14; }
       .robot-log-container #robot-log li .message-icon {
         display: none; }
       .robot-log-container #robot-log li .message .triangle {
@@ -935,7 +936,7 @@ nav.small-nav .robot-log-container {
     max-width: 50em;
     margin: 0 auto;
     padding: 0.125em;
-    background-color: #ede4d6; }
+    background-color: #EEE; }
     .keyboard-container .keyboard:after {
       content: "";
       display: table;
@@ -947,17 +948,21 @@ nav.small-nav .robot-log-container {
       height: 3em;
       margin: 0.125em;
       padding-top: 1em;
-      background-color: #f4f0e8;
+      background-color: #FFF;
       color: #333;
       line-height: 1em;
       font-weight: bold;
       text-align: center; }
       .keyboard-container .keyboard .key.key-down {
-        background-color: #e5d9c4; }
+        background-color: #e6e6e6; }
+      .keyboard-container .keyboard .key.key-action {
+        background-color: #B6E0E7; }
+        .keyboard-container .keyboard .key.key-action.key-down {
+          background-color: #90d0da; }
       .keyboard-container .keyboard .key.key-dark {
-        background-color: #cbc0ae; }
+        background-color: #CCC; }
         .keyboard-container .keyboard .key.key-dark.key-down {
-          background-color: #b7a88f; }
+          background-color: #b3b3b3; }
       .keyboard-container .keyboard .key.key-mk {
         padding-top: 0.25em;
         line-height: 1.25em; }

@@ -37,7 +37,7 @@ define([
 				console.log('Statuses socket connected');
 				
 				socket.get('/statuses?limit=1&sort=createdAt DESC', function(status){
-					console.log(status);
+					// console.log(status);
 				});
 
 				socket.on('statuses', function(status){

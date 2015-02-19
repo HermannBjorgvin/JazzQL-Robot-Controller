@@ -1,0 +1,27 @@
+{
+	"keys":{
+		"87":{
+			"keydown": {
+				"command": "forward",
+				"parameters": [
+					{
+						"name": "p1",
+						"value": 15
+					},
+					{
+						"name": "p2",
+						"value": 4
+					}
+				]
+			},
+			"keyup": {
+				"command": "stop",
+				"parameters":[
+				]
+			}
+		},
+		"65":{},
+		"83":{},
+		"68":{}
+	}
+}
